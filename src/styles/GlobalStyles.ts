@@ -16,6 +16,10 @@ export default createGlobalStyle`
     height: 100%;
   }
 
+  #__next {
+    overflow: auto;
+  }
+
   *, button, input {
     border: 0;
     outline: 0;

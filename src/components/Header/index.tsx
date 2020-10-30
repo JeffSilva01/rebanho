@@ -1,4 +1,4 @@
-import Logo from '../../assets/logo.svg'
+import Logo from '../../assets/logo-white.svg'
 import HoseIcon from '../../assets/house-icon.svg'
 // import iconHouse from '../../assets/icon-house.svg'
 
