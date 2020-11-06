@@ -8,6 +8,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  h3 {
+    color: #581518;
+  }
+
   html {
     font-size: 62.5%
   }

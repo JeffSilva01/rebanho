@@ -18,7 +18,7 @@ export const Container = styled.div`
 `
 
 export const Content = styled.div`
-  width: 100%;
+  width: 100vw;
   max-width: 1120px;
 
   display: flex;

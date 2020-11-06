@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 import cowImg from '../../assets/cow.jpg'
+import curved from '../../assets/border-curved.png'
+import galery from '../../assets/galery.png'
 
 export const Banner = styled.div`
   width: 100%;
@@ -24,8 +26,9 @@ export const Banner = styled.div`
 `
 
 export const WhoWeAre = styled.section`
-  width: 100vw;
-  background-color: var(--secondary);
+  background: var(--secondary) url(${curved}) no-repeat;
+  background-size: max-width 1300px;
+  background-position-x: center;
 
   > div {
     width: 100%;
@@ -115,6 +118,37 @@ export const Catalogs = styled.section`
         align-items: center;
         justify-content: center;
         color: var(--white);
+      }
+    }
+  }
+`
+
+export const Gallery = styled.section`
+  background: url(${galery}) no-repeat;
+  background-position: center bottom;
+
+  > div {
+    width: 100%;
+    max-width: 1120px;
+    height: 768px;
+    margin: auto;
+
+    div {
+      display: flex;
+      align-items: center;
+      margin-top: 80px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 256px;
+
+        :nth-child(2) {
+          width: 350px;
+          margin: 0 50px;
+        }
       }
     }
   }
