@@ -132,6 +132,7 @@ export const Gallery = styled.section`
     max-width: 1120px;
     height: 768px;
     margin: auto;
+    margin-top: 100px;
 
     div {
       display: flex;
