@@ -1,16 +1,49 @@
+import { useEffect, useState } from 'react'
+import api from 'axios'
+
 import Header from '../components/Header'
 import Carousel from '../components/Carousel'
 
 import Logo from '../assets/logo.svg'
-// import BorderCurved from '../assets/border-curved.svg'
 import WhoWeAreImg from '../assets/who-we-are.svg'
 import MissionEyesightValuesImg from '../assets/mission-eyesight-values.svg'
 import AnimalNutritionImg from '../assets/animal-nutrition.svg'
 import Nuvens from '../assets/nuvens.svg'
+import Message from '../assets/message.svg'
+import FaceFooter from '../assets/faceFooter.svg'
+import InstaFooter from '../assets/instaFooter.svg'
 
-import { Banner, WhoWeAre, Catalogs, Gallery } from '../styles/pages/landing'
+import {
+  Banner,
+  WhoWeAre,
+  Catalogs,
+  Gallery,
+  Contact,
+  ContainerEnd,
+  Footer
+} from '../styles/pages/landing'
 
 const Landing: React.FC = () => {
+  const [urlInstagram, setUrlInstagram] = useState([])
+
+  useEffect(() => {
+    async function getImagesInstagram() {
+      const { data } = await api.get(
+        'https://www.instagram.com/rebanhosa/?__a=1'
+      )
+
+      setUrlInstagram([
+        data.graphql.user.edge_owner_to_timeline_media.edges[0].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[1].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[2].node.display_url
+      ])
+    }
+
+    getImagesInstagram()
+  }, [])
+
   return (
     <>
       <Header />
@@ -55,21 +88,51 @@ const Landing: React.FC = () => {
         <div>
           <Nuvens />
           <div>
-            <img
-              src="https://instagram.ffor26-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/123406867_283975916165416_1428874556204100761_n.jpg?_nc_ht=instagram.ffor26-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=ObihPl1htHoAX_f89dh&_nc_tp=24&oh=d4d782f7f8c28a8689d321451ea178d2&oe=5FCCC503"
-              alt=""
-            />
-            <img
-              src="https://instagram.ffor26-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/123406867_283975916165416_1428874556204100761_n.jpg?_nc_ht=instagram.ffor26-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=ObihPl1htHoAX_f89dh&_nc_tp=24&oh=d4d782f7f8c28a8689d321451ea178d2&oe=5FCCC503"
-              alt=""
-            />
-            <img
-              src="https://instagram.ffor26-1.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s750x750/123406867_283975916165416_1428874556204100761_n.jpg?_nc_ht=instagram.ffor26-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=ObihPl1htHoAX_f89dh&_nc_tp=24&oh=d4d782f7f8c28a8689d321451ea178d2&oe=5FCCC503"
-              alt=""
-            />
+            <img src={urlInstagram[1]} alt="postes do instagram" />
+            <img src={urlInstagram[0]} alt="postes do instagram" />
+            <img src={urlInstagram[2]} alt="postes do instagram" />
           </div>
         </div>
       </Gallery>
+      <ContainerEnd>
+        <Contact>
+          <form>
+            <Message />
+            <h1>Fale conosco</h1>
+            <input type="text" placeholder="Nome" />
+            <input type="text" placeholder="E-mail" />
+            <input type="text" placeholder="Whatsapp" />
+            <textarea placeholder="Escreva sua mensagem" />
+            <button type="submit">Enviar</button>
+          </form>
+        </Contact>
+        <Footer>
+          <Logo />
+          <p>Siga nossas redes</p>
+          <div>
+            <a href="" target="_blank" rel="noreferrer">
+              <FaceFooter />
+            </a>
+            <a
+              href="https://www.instagram.com/rebanhosa"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <InstaFooter />
+            </a>
+          </div>
+
+          <p>Rebanho Soluções Agropecuárias</p>
+          <div>
+            <p>(85) 3231.9248</p>
+            <p>Rodovia BR - 116, 9748, Barroso</p>
+          </div>
+          <div>
+            <p>(85) 99697.2626</p>
+            <p>CEP: 60862-764 - Fortaleza|CE</p>
+          </div>
+        </Footer>
+      </ContainerEnd>
     </>
   )
 }

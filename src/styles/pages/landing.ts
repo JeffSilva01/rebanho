@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import cowImg from '../../assets/cow.jpg'
 import curved from '../../assets/border-curved.png'
 import galery from '../../assets/galery.png'
+import containerEnd from '../../assets/containerEnd.png'
+import footer from '../../assets/footer.png'
 
 export const Banner = styled.div`
   width: 100%;
@@ -151,6 +153,138 @@ export const Gallery = styled.section`
           margin: 0 50px;
         }
       }
+    }
+  }
+`
+export const ContainerEnd = styled.div`
+  background: url(${containerEnd}) no-repeat;
+  background-position: center top;
+`
+
+export const Contact = styled.div`
+  width: 100%;
+  max-width: 1120px;
+
+  margin: auto;
+
+  > form {
+    width: 400px;
+    margin-left: auto;
+
+    > svg {
+      margin-top: 150px;
+      margin-bottom: 86px;
+    }
+
+    h1 {
+      color: var(--secondary);
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      color: #fff;
+      margin-top: 5px;
+      background-color: var(--secondary);
+      text-align: center;
+
+      ::placeholder {
+        color: #fff;
+      }
+
+      :focus::-webkit-input-placeholder {
+        color: transparent;
+      }
+      :focus:-moz-placeholder {
+        /* Firefox 18- */
+        color: transparent;
+      }
+      :focus::-moz-placeholder {
+        /* Firefox 19+ */
+        color: transparent;
+      }
+      :focus:-ms-input-placeholder {
+        color: transparent;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      color: #fff;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      background-color: var(--secondary);
+
+      text-align: center;
+
+      resize: none;
+
+      ::placeholder {
+        color: #fff;
+      }
+
+      :focus::-webkit-input-placeholder {
+        color: transparent;
+      }
+      :focus:-moz-placeholder {
+        /* Firefox 18- */
+        color: transparent;
+      }
+      :focus::-moz-placeholder {
+        /* Firefox 19+ */
+        color: transparent;
+      }
+      :focus:-ms-input-placeholder {
+        color: transparent;
+      }
+    }
+
+    button {
+      width: 60px;
+      height: 40px;
+      color: #fff;
+      background-color: var(--primary);
+      margin-left: auto;
+    }
+  }
+`
+
+export const Footer = styled.div`
+  background: url(${footer}) no-repeat;
+  background-position: center bottom;
+
+  width: 100%;
+  height: 750px;
+  max-width: 1336px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  color: var(--secondary);
+
+  > svg {
+    margin-top: 100px;
+    margin-bottom: 95px;
+  }
+
+  > p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    > * {
+      margin: 0 15px;
+    }
+
+    > a {
+      margin-bottom: 25px;
     }
   }
 `
