@@ -11,17 +11,12 @@ export const Banner = styled.div`
   margin: 45px 0;
 
   > div {
-    width: 100%;
+    width: 90%;
     max-width: 1120px;
     margin: auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
     > svg {
-      margin-top: 40px;
+      margin: 40px auto;
       width: 100%;
     }
   }

@@ -1,8 +1,20 @@
 import { useEffect, useState } from 'react'
 import api from 'axios'
+import Slider from 'react-slick'
+
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 import Header from '../components/Header'
-import Carousel from '../components/Carousel'
+// import Carousel from '../components/Carousel'
+
+import img1 from '../assets/carousel/1.png'
+import img2 from '../assets/carousel/2.png'
+import img3 from '../assets/carousel/3.png'
+import img4 from '../assets/carousel/4.png'
+import img5 from '../assets/carousel/5.png'
+import img6 from '../assets/carousel/6.png'
+import img7 from '../assets/carousel/7.png'
 
 import Logo from '../assets/logo.svg'
 import WhoWeAreImg from '../assets/who-we-are.svg'
@@ -25,6 +37,15 @@ import {
 
 const Landing: React.FC = () => {
   const [urlInstagram, setUrlInstagram] = useState([])
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  }
 
   useEffect(() => {
     async function getImagesInstagram() {
@@ -50,7 +71,15 @@ const Landing: React.FC = () => {
       <Banner>
         <div>
           <Logo />
-          <Carousel />
+          <Slider {...settings}>
+            <img src={img1} alt="Banner" />
+            <img src={img2} alt="Banner" />
+            <img src={img3} alt="Banner" />
+            <img src={img4} alt="Banner" />
+            <img src={img5} alt="Banner" />
+            <img src={img6} alt="Banner" />
+            <img src={img7} alt="Banner" />
+          </Slider>
         </div>
       </Banner>
       <WhoWeAre>
