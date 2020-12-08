@@ -21,7 +21,7 @@ export default createGlobalStyle`
   }
 
   #__next {
-    overflow: auto;
+    overflow-x: hidden;
   }
 
   *, button, input {

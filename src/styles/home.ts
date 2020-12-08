@@ -44,6 +44,11 @@ export const Content = styled.div`
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 425px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     a {
       width: 200px;
       height: 45px;
@@ -61,6 +66,10 @@ export const Content = styled.div`
 
       & + a {
         background-color: #35b44c;
+
+        @media (max-width: 425px) {
+          margin-top: 20px;
+        }
       }
     }
   }
