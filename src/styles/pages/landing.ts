@@ -31,14 +31,27 @@ export const WhoWeAre = styled.section`
     width: 100%;
     max-width: 1120px;
     margin: auto;
-    padding: 80px 0;
+    padding: 125px 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
 
     > svg {
-      width: 540px;
+      width: 40%;
+      height: auto;
+    }
 
-      & + svg {
-        height: 620px;
-        margin-top: auto;
+    @media (max-width: 425px) {
+      flex-direction: column;
+      align-items: center;
+
+      > svg {
+        width: 90%;
+
+        & + svg {
+          margin-top: 50px;
+        }
       }
     }
   }
@@ -63,6 +76,11 @@ export const Catalogs = styled.section`
 
     position: relative;
 
+    svg {
+      width: 80%;
+      max-width: 350px;
+    }
+
     > ul {
       position: absolute;
       right: 100px;
@@ -82,14 +100,24 @@ export const Catalogs = styled.section`
           margin-right: 30px;
         }
       }
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     > div {
-      width: 500px;
+      width: 90%;
+      max-width: 500px;
       margin-left: auto;
       margin-top: 150px;
       padding: 10px;
       background-color: var(--primary);
+
+      @media (max-width: 768px) {
+        margin: auto;
+        margin: 100px;
+      }
 
       h1 {
         text-align: center;
@@ -107,6 +135,7 @@ export const Catalogs = styled.section`
         grid-template-columns: auto auto;
         grid-template-rows: auto auto auto;
       }
+
       li {
         height: 40px;
         margin: 3px;

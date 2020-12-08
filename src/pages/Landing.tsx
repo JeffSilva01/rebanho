@@ -99,7 +99,6 @@ const Landing: React.FC = () => {
             <li>Caprinos</li>
             <li>Ovinos</li>
           </ul>
-
           <div>
             <h1>Mídias digitais</h1>
             <ul>
