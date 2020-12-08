@@ -156,33 +156,27 @@ export const Gallery = styled.section`
   > div {
     width: 100%;
     max-width: 1120px;
-    height: 768px;
     margin: auto;
-    margin-top: 100px;
 
-    div {
-      display: flex;
-      align-items: center;
-      margin-top: 80px;
+    svg {
+      width: 90%;
+      height: auto;
+      margin: 5%;
+    }
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        width: 256px;
-
-        :nth-child(2) {
-          width: 350px;
-          margin: 0 50px;
-        }
-      }
+    img {
+      padding: 10px;
     }
   }
 `
 export const ContainerEnd = styled.div`
   background: url(${containerEnd}) no-repeat;
   background-position: center top;
+
+  @media (max-width: 424px) {
+    background-position: left top;
+    background-size: 185%;
+  }
 `
 
 export const Contact = styled.div`
@@ -192,12 +186,22 @@ export const Contact = styled.div`
   margin: auto;
 
   > form {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     margin-left: auto;
+
+    @media (max-width: 425px) {
+      margin: auto;
+      padding-top: 380px;
+    }
 
     > svg {
       margin-top: 150px;
       margin-bottom: 86px;
+
+      @media (max-width: 425px) {
+        display: none;
+      }
     }
 
     h1 {

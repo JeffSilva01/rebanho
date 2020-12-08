@@ -6,7 +6,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import Header from '../components/Header'
-// import Carousel from '../components/Carousel'
 
 import img1 from '../assets/carousel/1.png'
 import img2 from '../assets/carousel/2.png'
@@ -46,6 +45,27 @@ const Landing: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1
   }
+  const settingsInstagram = {
+    infinite: true,
+    autoplay: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    className: 'center',
+    centerMode: true,
+    centerPadding: '60px',
+    responsive: [
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      }
+    ]
+  }
 
   useEffect(() => {
     async function getImagesInstagram() {
@@ -58,7 +78,26 @@ const Landing: React.FC = () => {
           .display_url,
         data.graphql.user.edge_owner_to_timeline_media.edges[1].node
           .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[2].node.display_url
+        data.graphql.user.edge_owner_to_timeline_media.edges[2].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[3].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[4].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[5].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[6].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[7].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[8].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[9].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[10].node
+          .display_url,
+        data.graphql.user.edge_owner_to_timeline_media.edges[11].node
+          .display_url
       ])
     }
 
@@ -115,11 +154,20 @@ const Landing: React.FC = () => {
       <Gallery>
         <div>
           <Nuvens />
-          <div>
-            <img src={urlInstagram[1]} alt="postes do instagram" />
+          <Slider {...settingsInstagram}>
             <img src={urlInstagram[0]} alt="postes do instagram" />
+            <img src={urlInstagram[1]} alt="postes do instagram" />
             <img src={urlInstagram[2]} alt="postes do instagram" />
-          </div>
+            <img src={urlInstagram[3]} alt="postes do instagram" />
+            <img src={urlInstagram[4]} alt="postes do instagram" />
+            <img src={urlInstagram[5]} alt="postes do instagram" />
+            <img src={urlInstagram[6]} alt="postes do instagram" />
+            <img src={urlInstagram[7]} alt="postes do instagram" />
+            <img src={urlInstagram[8]} alt="postes do instagram" />
+            <img src={urlInstagram[9]} alt="postes do instagram" />
+            <img src={urlInstagram[10]} alt="postes do instagram" />
+            <img src={urlInstagram[11]} alt="postes do instagram" />
+          </Slider>
         </div>
       </Gallery>
       <ContainerEnd>
