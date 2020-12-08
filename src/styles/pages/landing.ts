@@ -281,6 +281,7 @@ export const Contact = styled.div`
 export const Footer = styled.div`
   background: url(${footer}) no-repeat;
   background-position: center bottom;
+  background-size: 100%;
 
   width: 100%;
   height: 750px;
@@ -293,7 +294,13 @@ export const Footer = styled.div`
 
   color: var(--secondary);
 
+  @media (max-width: 425px) {
+    height: 630px;
+  }
+
   > svg {
+    width: 85%;
+    max-width: 350px;
     margin-top: 100px;
     margin-bottom: 95px;
   }
@@ -306,6 +313,12 @@ export const Footer = styled.div`
   > div {
     display: flex;
     align-items: center;
+
+    @media (max-width: 375px) {
+      p {
+        font-size: 13px;
+      }
+    }
 
     > * {
       margin: 0 15px;
