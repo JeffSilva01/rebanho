@@ -15,6 +15,13 @@ import img5 from '../assets/carousel/5.png'
 import img6 from '../assets/carousel/6.png'
 import img7 from '../assets/carousel/7.png'
 
+import insta01 from '../assets/instagram/foto1.jpg'
+import insta02 from '../assets/instagram/foto2.jpg'
+import insta03 from '../assets/instagram/foto3.jpg'
+import insta04 from '../assets/instagram/foto4.jpg'
+import insta05 from '../assets/instagram/foto5.jpg'
+import insta06 from '../assets/instagram/foto6.jpg'
+
 import Logo from '../assets/logo.svg'
 import WhoWeAreImg from '../assets/who-we-are.svg'
 import MissionEyesightValuesImg from '../assets/mission-eyesight-values.svg'
@@ -34,9 +41,6 @@ import {
   Footer
 } from '../styles/pages/landing'
 
-const Landing: React.FC = () => {
-  const [urlInstagram, setUrlInstagram] = useState([])
-
   const settings = {
     dots: false,
     infinite: true,
@@ -45,6 +49,7 @@ const Landing: React.FC = () => {
     slidesToShow: 1,
     slidesToScroll: 1
   }
+
   const settingsInstagram = {
     infinite: true,
     autoplay: true,
@@ -67,42 +72,7 @@ const Landing: React.FC = () => {
     ]
   }
 
-  useEffect(() => {
-    async function getImagesInstagram() {
-      const { data } = await api.get(
-        'https://www.instagram.com/rebanhosa/?__a=1'
-      )
-
-      setUrlInstagram([
-        data.graphql.user.edge_owner_to_timeline_media.edges[0].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[1].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[2].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[3].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[4].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[5].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[6].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[7].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[8].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[9].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[10].node
-          .display_url,
-        data.graphql.user.edge_owner_to_timeline_media.edges[11].node
-          .display_url
-      ])
-    }
-
-    getImagesInstagram()
-  }, [])
+const Landing: React.FC = () => {
 
   return (
     <>
@@ -155,18 +125,12 @@ const Landing: React.FC = () => {
         <div>
           <Nuvens />
           <Slider {...settingsInstagram}>
-            <img src={urlInstagram[0]} alt="postes do instagram" />
-            <img src={urlInstagram[1]} alt="postes do instagram" />
-            <img src={urlInstagram[2]} alt="postes do instagram" />
-            <img src={urlInstagram[3]} alt="postes do instagram" />
-            <img src={urlInstagram[4]} alt="postes do instagram" />
-            <img src={urlInstagram[5]} alt="postes do instagram" />
-            <img src={urlInstagram[6]} alt="postes do instagram" />
-            <img src={urlInstagram[7]} alt="postes do instagram" />
-            <img src={urlInstagram[8]} alt="postes do instagram" />
-            <img src={urlInstagram[9]} alt="postes do instagram" />
-            <img src={urlInstagram[10]} alt="postes do instagram" />
-            <img src={urlInstagram[11]} alt="postes do instagram" />
+            <img src={insta01} alt="postes do instagram" />
+            <img src={insta02} alt="postes do instagram" />
+            <img src={insta03} alt="postes do instagram" />
+            <img src={insta04} alt="postes do instagram" />
+            <img src={insta05} alt="postes do instagram" />
+            <img src={insta06} alt="postes do instagram" />
           </Slider>
         </div>
       </Gallery>
